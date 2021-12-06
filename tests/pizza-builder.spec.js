@@ -9,7 +9,12 @@ const pascalCaseToDashSeparated = (value) =>
 
 const extractAmountFromPrice = (price) => Number(price.replace(/\$/g, ''));
 
-const getPageState = async () => await page.evaluate(() => state);
+ async function getPageState () {
+   const res = await page.evaluate(() => state);
+   return res
+} 
+
+
 
 // Ironhack Pizza Builder Test-suite
 describe('Ironhack Pizza Builder', () => {
